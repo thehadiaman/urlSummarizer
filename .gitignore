@@ -1,3 +1,6 @@
 /.idea
 /venv
 /urlSummarizer/__pycache__
+/db.sqlite3
+/home/__pycache__/
+/home/migrations/__pycache__/
