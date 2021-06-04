@@ -2,4 +2,5 @@ from django.shortcuts import render, redirect
 
 
 def home(request):
-    return render(request, 'index.html')
+    data = {'error': '', 'email_value': '', 'url_value': ''}
+    return render(request, 'index.html', data)
