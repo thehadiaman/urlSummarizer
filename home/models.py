@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class UrlModel(models.Model):
+    email = models.EmailField(500)
+    original_url = models.URLField(500)
+    summarized_url = models.URLField(50)
