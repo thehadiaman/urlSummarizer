@@ -18,7 +18,8 @@
 <br>
 
 <div class="modal" id="X" style="display: inline">
-    <form>
+    <form method="POST" action="/process">
+        {% csrf_token %}
         <div class="modal-content">
             <div class="row">
                 <div class="row">
@@ -61,6 +62,7 @@
         </div>
     </div>
 {% endif %}
+
 </body>
 <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
 <script>
