@@ -4,7 +4,7 @@
 /db.sqlite3
 /home/__pycache__/
 /home/migrations/__pycache__/
-/home/migrations/0001_initial.py
+/home/migrations/*
 /validation/__pycache__/
 /__pycache__/
 /home/migrations/*
