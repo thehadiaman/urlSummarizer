@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from validation.Validator import input_validation
 from .models import UrlModel
 from django.http import HttpResponse
+from uuid import UUID, uuid1
+from django.http.response import Http404
 
 
 def home(request):
@@ -57,11 +59,15 @@ def process(request):
 
 
 def get_url(request, url):
-    data = UrlModel.objects.filter(summarized_url=url)
-    if data:
-        return redirect(data[0].original_url)
-    else:
-        return HttpResponse("ERROR")
+    try:
+        UUID(url, version=1)
+        data = UrlModel.objects.filter(summarized_url=url)
+        if data:
+            return redirect(data[0].original_url)
+        else:
+            return HttpResponse("ERROR")
+    except ValueError:
+        raise Http404
 
 
 def error_403_view(request, reason=""):
