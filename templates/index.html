@@ -38,7 +38,7 @@
                     <div class="input-field col s12">
                         <i class="material-icons prefix"  id="atc_icon">assignment</i>
                         <label>
-                            <input name="atc" id="atc" type="checkbox">
+                            <input name="atc" id="atc" type="checkbox" required {{ checked }}>
                             <span>I Agree with Terms and Conditions</span>
                         </label>
                     </div>
@@ -54,7 +54,7 @@
 {% if success_data %}
     <div id="success_modal" class="modal">
         <div class="modal-content center">
-            <a href="#" id="new_url" onclick="window.open('{{success_data}}')"><h5>{{success_data}}</h5></a>
+            <a style="cursor: pointer" id="new_url" onclick="window.open('{{success_data}}')"><h5>{{success_data}}</h5></a>
         </div>
         <div class="modal-footer">
             <button class="modal-close waves-effect red waves-green btn"><i class="material-icons center">close</i></button>
@@ -73,6 +73,10 @@
     let atc = document.getElementById('atc');
     let atc_icon = document.getElementById('atc_icon');
     let atc_test = false;
+    {% if checked %}
+    atc_test = true;
+    atc_icon.className = 'material-icons prefix cyan-text';
+    {% endif %}
 
     document.getElementById('reset_btn').onclick = ()=>{
         email_icon.className = 'material-icons prefix';
@@ -170,5 +174,6 @@
             atc_test = true
         }
     }
+
 </script>
 </html>
