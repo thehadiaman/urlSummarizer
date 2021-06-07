@@ -6,3 +6,5 @@
 /home/migrations/__pycache__/
 /home/migrations/0001_initial.py
 /validation/__pycache__/
+/__pycache__/
+/home/migrations/*
