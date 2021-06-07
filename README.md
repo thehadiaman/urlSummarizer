@@ -3,5 +3,5 @@
   <b/>
   <h4>To create database</h4>
   <b>Run "python3 manage.py makemigrations home"</b>
+  <br/>
   <b>Then "python3 manage.py migrate"</b>
-  <marquee>URL SUMMARIZER</marquee>
